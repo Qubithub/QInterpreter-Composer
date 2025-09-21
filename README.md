@@ -31,8 +31,6 @@ As a first-of-its-kind compiler from Latin America, it boosts regional infrastru
    4. Function ```translate_circuit.print_circuit()```
    5. Function ```simulate_circuit()```
 
-text
-
 5. [Algorithms](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#algorithms)
    1. Bell states
    2. Groover 2 Qubits states
@@ -50,7 +48,7 @@ text
    14. Quantum Teleportation
    15. Quantum Key distribution protocol
 
-6. [Authors](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#authors)
+[Authors](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#authors)
 
 # Key features
 
@@ -105,6 +103,8 @@ simulate_circuit
 3. Using our website platform [Qubithub.org](https://qubithub.org/), which offers a user-friendly environment for executing Qinterpreter online by visiting the Login page. 
 Users are introduced to a pre-configured application environment with the necessary libraries already installed, removing the need for manual installation. The user credentials can be obtained by contacting the team. After logging in, the next step involves importing the libraries, as was previously mentioned. This streamlined process allows users to focus more on running their quantum circuits and less on the setup.
 
+<img src="https://github.com/Qubithub/QInterpreter-Composer/blob/main/Images/login_Qinterpreter.jpg" alt="login_Qinterpreter" width="50%" height="50%">
+
 ## Qinterpreter functions
 
 This section describes in detail the functions used in the Qinterpreter library.
@@ -120,69 +120,72 @@ Here, ```nq``` represents the number of qubit registers used, and ```nc``` denot
 
 Function ```circuit.add_gate()```
 
-text
+Quantum computing algorithms are commonly depicted using quantum circuit models. These models incorporate quantum gates, projective measurements, and an n-qubit register known as qubits.
+A vector in the complex space C2describes the state of a qubit. Within this space, quantum gates are represented by unitary complex matrices, reflecting the unitary time evolution of closed quantum systems.
+In Qinterpreter, a complete set of standard gates widely used in this field has been implemented using the circuit.add_gate() function.
+The definitions of these gates are presented in Table 1 below. In this case, we present the gates currently implemented in Qinterpreter. Table 2 illustrates the procedure for incorporating these gates into any circuit object.
+
+| Gate/Matrix form | Description |
+| :---: | :--- |
+|H| ```circuit.add_gate(QuantumGate ("h", [0]))```|
+|CNOT| ```circuit.add_gate(QuantumGate ("cnot", [0, 1]))``` //Contro: q0, Objective: q1|
+|X| ```circuit.add_gate(QuantumGate("x", [0]))```|
+|Y| ```circuit.add_gate(QuantumGate("y", [0]))```|
+|Z| ```circuit.add_gate(QuantumGate ("z", [0]))```|
+|RY| ```circuit.add_gate(QuantumGate("ry", [0], [Angle]))``` //Rotate Y axis by any angle|
+|RX| ```circuit.add_gate(QuantumGate("rx", [0], [math.pi/2]))``` //Rotate X axis by any angle|
+|RZ| ```circuit.add_gate(QuantumGate("rz", [0], [math.pi/2]))``` //Rotate Z axis by any angle|
+|CCNOT| ```circuit.add_gate(QuantumGate("toffoli", [0,1,2]))``` //Control: q0 and q1, Objective: q2|
+|SWAP| ```circuit.add_gate(QuantumGate("x", [0, 1]))``` //Swap between q0 and q1|
+|CP| ```circuit.add_gate(QuantumGate("CPhase", [0, 1], [Angle]))``` // Applied an angle|
+|CZ| ```circuit.add_gate(QuantumGate("Cz", [0, 1], [Angle]))``` //Contro: q0, Objective: q1|
+|CY| ```circuit.add_gate(QuantumGate("Cy", [0, 1], [Angle]))``` //Contro: q0, Objective: q1|
+|Measure| ```circuit.add_gate(QuantumGate("MEASURE", [i, j]))``` //Where i is the qubit register index and j is the classical register index.|
+
+Note: The Toffoli gate is a standard quantum computing gate that modifies the state of a target qubit based on two control qubit states. In addition, Toffoli gates can be achieved through a sequence of elementary quantum gates.
 
 Function ```translate_to_framework()```
 
-text
+The goal of the Qinterpreter library is to be able to translate instructions to various quantum computing frameworks. 
+The Qinterpreter library perfectly fulfills this goal by being compatible with five libraries: Qiskit, Pyquil, Cirq, Pennylane, and Amazon-Braket.
+These libraries were selected based on their GitHub metrics, which can be interpreted as a measure of popularity for quantum computing development.
+
+To choose between the different desired development frameworks and run your circuit, the following code is used:
+
+```
+selected_framework = ′qiskit ′
+translated_circuit = translate_to_framework(circuit,
+selected_framework)
+```
+
+The “selected_framework” variable is where you choose the desired framework: qiskit, cirq, pennylane, pyquil, amazonbraket.
 
 Function ```translate_circuit.print_circuit()```
 
-text
+Another feature of Qinterpreter is that it allows you to print the modeled circuit regardless of the selected quantum computing framework using the print_circuit function, allowing users to visualize and debug the quantum circuit they have created.
+In summary, once the framework has been selected, the previously defined quantum circuit can be printed using the following function:
+
+```
+translated_circuit.print_circuit()
+```
 
 Function ```simulate_circuit()```
 
-text
 
-## Applications
 
-### Bell States
+Qinterpreter uses the appropriate simulators provided by each library to simulate a specific quantum circuit. For example, in the case of Qiskit, we use the QASM simulator. However, when using the Pyquil framework, the user must install the necessary software requirements. 
 
-text
+The command to perform and print the simulations is as follows:
 
-### Grover Algorithm 
+```print(simulate_circuit(circuit, selected_framework))```
 
-Grover 2 Qubits states
+In order to perform the simulation, it is important to note that the Measure function must be called before executing ```simulate_circuit()```
+To apply the measurement function, the user must execute the following code:
 
-Grover states 4 Qubits
+```circuit.add_gate(QuantumGate(“MEASURE”, [i,j]))```
 
-Groover states 6 Qubits
+In the above function, [i, j] represents the indices of the quantum register and the classical register where the quantum measurement function will be applied.
 
-### Shor's algorithm
-
-Shor's algorithm 15
-
-Shor's algorithm 21
-
- Shor's algorithm 35
-
-### HHL
-
-text
-
-### GHZ state
-
-GHZ state with 3 states
-
-GHZ state with 4 states
-
-GHZ state with 5 states
-
-### QSVR
-
-text
-
-### Superdense Coding
-
-text
-
-### Quantum Teleportation
-
-text
-
-### Quantum Key distribution protocol
-
-text
 
 ## Authors
 
