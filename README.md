@@ -8,10 +8,7 @@
 
 ### Introduction
 
-Qinterpreter is an open-source plataform unifies five most popular Python-based quantum libraries (Qiskit, Cirq, PennyLane, PyQuil, Amazon Braket), developed by top industry leaders such as IBM, Amazon, Google, Rigetti Computing, and Xanadu, these libraries are unified by Qinterpreter, simplifying algorithm quantum development and testing via only one plataform.
-This integration allows users to easily interact and execute code in different quantum computing frameworks. Basically, Qinterpreter acts as a simulator that translates algorithms between these frameworks and is available for free on the [Qubithub.org](https://www.qubithub.org/index.html) website. 
-This allows researchers and beginners who do not have access to physical quantum computers to model and simulate their research, as well as practice and interpret their results.
-As a first-of-its-kind compiler from Latin America, it boosts regional infrastructure and global interoperability.
+QInterpreter is a quantum interpreter and library that brings together five major frameworks—Qiskit, Cirq, PennyLane, PyQuil, and Amazon Braket—into a unified platform. It allows circuits to be written once and executed across different backends, streamlining algorithm development and testing while reducing the learning curve for students and researchers.
 
 ## Table contents
 1. [Project overview](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#project-overview)
