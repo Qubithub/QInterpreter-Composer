@@ -31,23 +31,6 @@ As a first-of-its-kind compiler from Latin America, it boosts regional infrastru
    4. Function ```translate_circuit.print_circuit()```
    5. Function ```simulate_circuit()```
 
-5. [Algorithms](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#algorithms)
-   1. Bell states
-   2. Groover 2 Qubits states
-   3. Groover states 4 Qubits
-   4. Shor's algorithm 15
-   5. Shor's algorithm 21
-   6. Shor's algorithm 35
-   7. HHL
-   8. GHZ GHZ state with 3 states
-   9. GHZ GHZ state with 4 states
-   10. GHZ GHZ state with 5 states
-   11. Groover states 6 Qubits
-   12. QSVR
-   13. Superdense Coding
-   14. Quantum Teleportation
-   15. Quantum Key distribution protocol
-
 [Authors](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#authors)
 
 # Key features
