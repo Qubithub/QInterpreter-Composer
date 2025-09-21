@@ -22,9 +22,18 @@ As a first-of-its-kind compiler from Latin America, it boosts regional infrastru
     1. Requirements
     2. Dependencies
     3. How to install dependencies
-    4. How to use
 
-4. [Algorithms](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#algorithms)
+3. [Qinterpreter functions](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#qinterpreter-functions)
+   
+   1. Function ```quantumCircuit()```
+   2. Function ```circuit.add_gate()```
+   3. Function ```translate_to_framework()```
+   4. Function ```translate_circuit.print_circuit()```
+   5. Function ```simulate_circuit()```
+
+text
+
+5. [Algorithms](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#algorithms)
    1. Bell states
    2. Groover 2 Qubits states
    3. Groover states 4 Qubits
@@ -41,7 +50,7 @@ As a first-of-its-kind compiler from Latin America, it boosts regional infrastru
    14. Quantum Teleportation
    15. Quantum Key distribution protocol
 
-4. [Authors](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#authors)
+6. [Authors](https://github.com/Qubithub/QInterpreter-Composer/edit/main/README.md#authors)
 
 # Key features
 
@@ -96,11 +105,18 @@ simulate_circuit
 3. Using our website platform [Qubithub.org](https://qubithub.org/), which offers a user-friendly environment for executing Qinterpreter online by visiting the Login page. 
 Users are introduced to a pre-configured application environment with the necessary libraries already installed, removing the need for manual installation. The user credentials can be obtained by contacting the team. After logging in, the next step involves importing the libraries, as was previously mentioned. This streamlined process allows users to focus more on running their quantum circuits and less on the setup.
 
-### Qinterpreter functions
+## Qinterpreter functions
+
+This section describes in detail the functions used in the Qinterpreter library.
+The main objective is to provide users with a comprehensive guide and extensive knowledge for the correct use of Qinterpreter's features and capabilities.
 
 Function ```quantumCircuit()```
 
-text
+Quantum circuits are crucial elements in quantum computing, as they serve as containers for a collection of qubits. Treating these qubits as unified entities allows the user to manipulate and modify their states using quantum gates. 
+The QuantumCircuit function in Qinterpreter allows you to generate a circuit taking into account the number of qubits and classical registers to be incorporated. 
+In this specific scenario, the following function is used to create a circuit:
+```circuit = QuantumCircuit(nq,nc)```
+Here, ```nq``` represents the number of qubit registers used, and ```nc``` denotes the number of classical registers that will be defined within the quantum circuit. The defined classical registers are then used to perform measurements.
 
 Function ```circuit.add_gate()```
 
