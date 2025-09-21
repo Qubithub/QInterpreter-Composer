@@ -9,7 +9,7 @@
 ### Introduction
 
 Qinterpreter is an open-source plataform unifies five most popular Python-based quantum libraries (Qiskit, Cirq, PennyLane, PyQuil, Amazon Braket), developed by top industry leaders such as IBM, Amazon, Google, Rigetti Computing, and Xanadu, these libraries are unified by Qinterpreter, simplifying algorithm quantum development and testing via only one plataform.
-This integration allows users to easily interact and execute code in different quantum computing frameworks. Basically, Qinterpreter acts as a simulator that translates algorithms between these frameworks and is available for free on the [Qubithub](https://www.qubithub.org/index.html) website. 
+This integration allows users to easily interact and execute code in different quantum computing frameworks. Basically, Qinterpreter acts as a simulator that translates algorithms between these frameworks and is available for free on the [Qubithub.org](https://www.qubithub.org/index.html) website. 
 This allows researchers and beginners who do not have access to physical quantum computers to model and simulate their research, as well as practice and interpret their results.
 As a first-of-its-kind compiler from Latin America, it boosts regional infrastructure and global interoperability.
 
@@ -57,7 +57,7 @@ As a first-of-its-kind compiler from Latin America, it boosts regional infrastru
 
 ### Requirements
 
-* Python-based enverioment.
+* Python-based enverioment 3.6 or later.
 * For Rigetti's ``` qvm ``` and ```quilc```
 
 ### Dependecies
@@ -72,21 +72,53 @@ Depending on the user’s requirements, there are three installation options to 
 1. Clonw the library folder directly from the GitHub repository (QInterpreter-Composter). 
 Once you’ve downloaded the Qinterpreter, you can use the library locally by calling the classes and functions from the same directory. 
 
-2. Install the Qinterpreter using the ```!pip install git+https://github.com/Qubithub/Qinterpreter-Composer.git``` command directly in the Jupyter console.
+2. Install the Qinterpreter using the ```!pip install git+https://github.com/Qubithub/QInterpreter-Composer.git``` command directly in the Jupyter console.
 This can be done by executing the following command in the Python console at the operating system’s shell prompt.
+After the installation process is over, the next step involves importing the requisite libraries. To accomplish this, the users should utilize the following command code.
 
-* Rigetti's ``` qvm ``` and ```quilc```:
-  1. Download ```forest-sdk-2.23.0-linux-deb.tar.bz2``` from Rigetti's QCS documentation portal.
-  2. Extract the tarball: ```tar -xf forest-sdk-2.23.0-linux-deb.tar.bz2```.
-  3. Execute the installer: ```sudo ./forest-sdk-2.23.0-linux-deb.run. This installs binaries to /usr/local/bin/```.
-  4. Create and configure systemd services for ```qvm.service``` and ```quilc.service```.
-  5. Enable and start the services: ```sudo systemctl daemon-reload```, ```sudo systemctl enable qvm quilc```, ```sudo systemctl start qvm quilc```.
+```
+import math
+from quantumgateway.quantum_circuit import QuantumCircuit, QuantumGate
+from quantumgateway.quantum_translator.braket_translator import
+BraketTranslator
+from quantumgateway.quantum_translator.cirq_translator import
+CirqTranslator
+from quantumgateway.quantum_translator.qiskit_translator import
+QiskitTranslator
+from quantumgateway.quantum_translator.pennylane_translator import
+PennyLaneTranslator
+from quantumgateway.quantum_translator.pyquil_translator import
+PyQuilTranslator
+from quantumgateway.main import translate_to_framework,
+simulate_circuit
+```
 
-### How to use
+3. Using our website platform [Qubithub.org](https://qubithub.org/), which offers a user-friendly environment for executing Qinterpreter online by visiting the Login page. 
+Users are introduced to a pre-configured application environment with the necessary libraries already installed, removing the need for manual installation. The user credentials can be obtained by contacting the team. After logging in, the next step involves importing the libraries, as was previously mentioned. This streamlined process allows users to focus more on running their quantum circuits and less on the setup.
+
+### Qinterpreter functions
+
+Function ```quantumCircuit()```
 
 text
 
-## Algorithms
+Function ```circuit.add_gate()```
+
+text
+
+Function ```translate_to_framework()```
+
+text
+
+Function ```translate_circuit.print_circuit()```
+
+text
+
+Function ```simulate_circuit()```
+
+text
+
+## Applications
 
 ### Bell States
 
