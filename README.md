@@ -176,4 +176,3 @@ In the above function, [i, j] represents the indices of the quantum register and
 | Braulio Misael Villegas Martínez | bvillegasmartinez@luc.edu  |  |
 | Luis Arturo Tapia Alarcón | luis.tapiaa@uaem.edu.mx |  |
 | Sandra Gesing | sandra@us-rse.org |  |
-| Juan Carlos Sanchéz Pérez | carlox.fcfm@gmail.com |  |
