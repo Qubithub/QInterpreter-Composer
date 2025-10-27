@@ -83,13 +83,14 @@ simulate_circuit
 3. Using our website platform [Qubithub.org](https://qubithub.org/), which offers a user-friendly environment for executing Qinterpreter online by visiting the Login page. 
 Users are introduced to a pre-configured application environment with the necessary libraries already installed, removing the need for manual installation. The user credentials can be obtained by contacting the team. After logging in, the next step involves importing the libraries, as was previously mentioned. This streamlined process allows users to focus more on running their quantum circuits and less on the setup.
 
+<img src="https://github.com/Qubithub/QInterpreter-Composer/blob/main/Images/login_Qinterpreter.jpg" alt="login_Qinterpreter" width="50%" height="50%">
+
 4. Build and run in Docker. Clone the repo. From the repo directory run: 
 
 * `docker build . -t qinterpreter`
 * `docker run -p 8888:8888 qinterpreter`
 * The notebook will be available at `http://localhost:8888/lab`
 
-<img src="https://github.com/Qubithub/QInterpreter-Composer/blob/main/Images/login_Qinterpreter.jpg" alt="login_Qinterpreter" width="50%" height="50%">
 
 ## Qinterpreter functions
 
