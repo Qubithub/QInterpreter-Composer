@@ -1,5 +1,6 @@
 
-from qiskit import Aer, execute
+from qiskit import QuantumCircuit
+from qiskit_aer import Aer
 from quantumgateway.quantum_translator.quantum_translator import QuantumTranslator
 import matplotlib as mpl
 class QiskitTranslator(QuantumTranslator):
@@ -16,7 +17,8 @@ class QiskitTranslator(QuantumTranslator):
         statevector_simulator = Aer.get_backend('statevector_simulator')
 
         # Execute the circuit on the statevector simulator
-        job = execute(self.qc, statevector_simulator)
+        job = statevector_simulator.run(self.qc)
+        # job = execute(self.qc, statevector_simulator)
         result = job.result()
 
         # Get the statevector from the result
@@ -64,7 +66,7 @@ class QiskitTranslator(QuantumTranslator):
 
     def simulate(self, shots=1000):
         simulator = Aer.get_backend('qasm_simulator')
-        job = execute(self.qc, simulator, shots=shots)
+        job = simulator.run(self.qc, shots=shots)
         result = job.result()
         counts = result.get_counts(self.qc)
         # Convert keys to big-endian format
